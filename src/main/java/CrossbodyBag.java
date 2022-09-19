@@ -30,3 +30,45 @@
  *
  *       See the tests in test/CrossBodyBagTest.java for examples.
  */
+
+/**
+ * This file defines an child class named HandBag.
+ * We have provided most of the code for this class, however,
+ * you should implement the provided TODOs.
+ *
+ * You may find the readings in chapter 3. Relationships between Classes
+ * helpful while working through this exercise.
+ */
+public class CrossbodyBag extends Bag{
+    private int numberOfStraps;
+    /**
+     * Creates a new HandBag with the given color and
+     * capacity.
+     *
+     * @param color
+     * @param capacity
+     */
+    public CrossbodyBag(String color, int capacity, int straps) {
+        /**
+         * This is how we call the parent's constructor
+         * The Python equivalent is super().__init__(...)
+         */
+        super(color, capacity);
+        this.numberOfStraps = straps;
+    }
+
+    public int getNumberOfStraps() {
+        return numberOfStraps;
+    }
+
+    @Override
+    public void enhance() {
+        super.increaseCapacity(2);
+    }
+
+    @Override
+    public String toString() {
+        return super.getColor() + " Crossbody Bag with " + this.getNumberOfStraps() + " straps (" + super.getNumberOfContents() + " / " +
+                super.getCapacity() + ")";
+    }
+}
